@@ -1,0 +1,38 @@
+<!-- Simple Calculator Using Pop Up Box -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One</title>
+</head>
+<body>
+    <script>
+        let operation = parseInt(propmt("Enter 1 for Addition 2 For Subtraction 3 for Multiplication 4 for Division : "));
+        let a = parseInt(prompt("Enter first number : "));
+        let b = parseInt(prompt("Enter Second Number : "));
+        let ans = 0;
+        switch(operation){
+            case 1:
+                ans = a+b;
+                document.write("Addition of " ,a, " and ",b," is : ",ans);
+                break;
+                case 2:
+                    ans = a-b;
+                    document.write("Subtraction of " ,a, " and ",b," is : ",ans);
+                    break;
+                    case 3:
+                        ans = a*b;
+                        document.write("Multiplication of " ,a, " and ",b," is : ",ans);
+                        break;
+                        case 4:
+                            ans = a/b;
+                            document.write("Division of " ,a, " and ",b," is : ",ans);
+                            break;
+                            default:
+                                document.write("Enter Valid Operation Number");
+                                break;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Enter Number : "));
+        temp = num;
+        digit=0;
+        sum=0;
+         ans =1;
+        while(num!=0){
+            digit++;
+            num = parseInt(num/10);
+        }
+        num = temp;
+        while(temp!=0){
+            rem = temp%10;
+            sum = sum + pow(rem);
+temp = temp/10;
+        }
+        function pow(rem){
+           
+            d = digit;
+            while(digit!=0){
+                ans = ans * rem;
+                digit--;
+            }
+            return ans;
+        }
+        if(num==sum){
+            document.write(num," is Armstrong");
+        }
+        else{
+            document.write(num," is not Armstrong");
+        }
+    </script>
+</body>
+</html>

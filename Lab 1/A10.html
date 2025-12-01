@@ -1,0 +1,22 @@
+<!-- GCD -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <script>
+        let a = parseInt(prompt("Enter first number : "));
+        let b = parseInt(prompt("Enter Second Number : "));
+        while(b!=0){
+            let r=a % b;
+            a=b;
+            b=r;
+        }
+
+        document.write("GCD is: " + a);
+    </script>
+ </body>
+ </html>
