@@ -31,8 +31,6 @@ const fs = require('fs');
 //     }
 // })
 
-
-
 // fs.exists('data.txt',(exists)=>{
 //     console.log("File Exists : ",exists);
 // });
