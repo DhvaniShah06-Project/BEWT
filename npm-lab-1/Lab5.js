@@ -1,6 +1,7 @@
 const child_process = require('child_process')
-const {exec} = require('process');
-const url =require('url')
+const {exec, emit} = require('process');
+const url =require('url');
+const EventEmitter = require('events');
 
 // child_process.exec("node -v",(error,stdout)=>{
 //   if(error){
@@ -38,9 +39,26 @@ const url =require('url')
 // protocol,hostname,pathname,quert parameters
 //  homework to see child process methods
 
-const myURL = new URL("https://example.com:8090")
-myURL.pathname = "products/item"
-myURL.searchParams.append("id","101")
-myURL.searchParams.append("color","white")
-console.log("Final URL : ",myURL)
-console.log("Serialized URL : ",myURL.toString())
+// const myURL = new URL("https://example.com:8090")
+// myURL.pathname = "products/item"
+// myURL.searchParams.append("id","101")
+// myURL.searchParams.append("color","white")
+// console.log("Final URL : ",myURL)
+// console.log("Serialized URL : ",myURL.toString())
+
+const emitter = new EventEmitter();
+emitter.on("Greet",()=>{
+    console.log("Hello! From Greet Event");
+})
+emitter.emit("Greet")
+
+setInterval(()=>{
+    emitter.emit("tick");
+},2000);
+
+emitter.on("tick",()=>{
+    console.log("Tick Event Occured");
+})
+
+
+
