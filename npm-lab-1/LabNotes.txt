@@ -48,3 +48,40 @@ app.get("/admin",authMiddleware,(req,res)=>{
  is used to serve static files like html css js and images directly to the client using express.static() without defining routes
  __super global variable
 
+
+ ---Mongoose
+ it is library (ODM) that makes working with MongoDb easier 
+ .connect("paste from mongodb compass") 
+
+ schema=mongoose.schema(data in key value pair 
+ name: string,{properties or constrains here}
+ 
+ )
+
+ a=.model("",ABC(schema name here))databse through mongo db hare validation
+ a.find()
+
+a through query fire database hare vatchit
+
+why need Mongoose?
+--schema less,meaning
+store anything,no fix anything easy to make mistake
+
+Without Mongoose
+db.users.insertOne({age:"twenty})
+age should be number but mongodb allows it
+
+->With Mongoose
+const userSchema=new mongoose.Schema({
+    name:string,
+    age:number
+});
+twenty will be rejected
+
+--Function--
+->mongoose.model()
+create model represents mongoDb collection
+provides method to create,read,update,delete
+
+->Mongose.schema
+Define ur schema
