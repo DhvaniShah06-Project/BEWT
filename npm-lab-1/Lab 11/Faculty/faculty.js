@@ -17,7 +17,8 @@
     experience:{
         type:Number,
         required:true
-    }
+    },
+    hireDate:{type:Date,default:Date.now}
  })
  
  module.exports=mongoose.model('Faculty',facultySchema);
