@@ -1,13 +1,13 @@
 const express=require('express');
-const Student=require('./student');
+const Product=require('./product');
 const app=express();
 // create new on=bject for every field and then pass req.body for insert many store all in variable and then
 //Create
 app.post("/",async(req,res)=>{
     try{
-        const student=new Student(req.body)
-        const savedStudent = await student.save()
-        res.status(201).json(savedStudent);
+        const product=new Product(req.body)
+        const savedProduct = await product.save()
+        res.status(201).json(savedProduct);
     }catch(error){
         res.status(400).json({error:error.message});
     }
@@ -16,8 +16,8 @@ app.post("/",async(req,res)=>{
 //Read All
 app.get("/",async(req,res)=>{
     try{
-        const student=await Student.find();
-        res.json(student);
+        const product=await Product.find();
+        res.json(product);
     }catch(error){
         res.status(500).json({error:error.message})
     }
@@ -26,11 +26,11 @@ app.get("/",async(req,res)=>{
 //get by id
 app.get('/:id',async(req,res)=>{
     try{
-        const student=await Student.findById(req.params.id);
-        if(!student){
-            return res.status(404).json({error:"Student not found"});
+        const product=await Product.findById(req.params.id);
+        if(!product){
+            return res.status(404).json({error:"product not found"});
         }
-        res.json(student);
+        res.json(product);
     }catch(err){
         res.status(500).json({error:"Server Error"});
     }
@@ -39,23 +39,24 @@ app.get('/:id',async(req,res)=>{
 //Update
 app.put('/:id',async (req,res)=>{
     try{
-        const updateStudent=await Student.findByIdAndUpdate(req.params.id,req.body,{new:true});
-        if(!updateStudent){
-            res.sendStatus(404).json({error:"Student not found"});
+        const updateproduct=await Product.findByIdAndUpdate(req.params.id,req.body,{new:true});
+        if(!updateproduct){
+            res.sendStatus(404).json({error:"product not found"});
         }
-        res.json(updateStudent);
+        res.json(updateproduct);
     }catch(err){
-        res.json(updateStudent);
+        res.json(updateproduct);
     }
 })
 
 //Delete
 app.delete('/:id',async(req,res)=>{
     try{
-        const ans=await Student.findByIdAndDelete(req.params.id);
+        const ans=await Product.findByIdAndDelete(req.params.id);
         if(!ans){
-            return res.status(404).json({error:"Student not found"});
+            return res.sendStatus(404).json({error:"product not found"});
         }
+        res.json(Product)
     }catch(err){
        return res.status(500).json({error:"Server Error"});
     }
