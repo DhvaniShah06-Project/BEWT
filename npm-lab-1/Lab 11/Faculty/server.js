@@ -10,6 +10,9 @@ mongoose.connect("mongodb://localhost:27017/facultyDB")
 .catch(err=>console.log(err));
 
 app.use('/api/faculty',facultyroutes)
+
+
+
 app.listen
 (3000,()=>{
     console.log("Server Started @3000")

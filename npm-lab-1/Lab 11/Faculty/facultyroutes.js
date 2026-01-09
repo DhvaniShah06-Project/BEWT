@@ -1,6 +1,5 @@
 const express=require('express');
 const Faculty=require('./faculty');
-const faculty = require('./faculty');
 const app=express();
 
 //Create
@@ -15,10 +14,34 @@ app.post("/",async(req,res)=>{
 });
 
 //Read All
-app.get("/",async(req,res)=>{
-    try{
-        const faculty=await Faculty.find();
-        res.json(faculty);
+// app.get("/",async(req,res)=>{
+//     try{
+//         const faculty=await Faculty.find();
+//         res.json(faculty);
+//     }catch(error){
+//         res.status(500).json({error:error.message})
+//     }
+// })
+
+app.get("/",async (req,res)=>{
+     try{
+        const{n,page=1,limit=5} =req.query;
+        let filter={};
+        if(n){
+            filter.name={$regex:n,$options:'i'}
+        }
+        const skip=(page-1)*limit;
+        const data=await Faculty.find(filter)
+        .skip(skip)
+        .limit(parseInt(limit));
+        const total=await Faculty.countDocuments(filter);
+        res.status(200).json({
+            totalRecords:total,
+            page:Number(page),
+            limit:Number(limit),
+            data
+        });
+
     }catch(error){
         res.status(500).json({error:error.message})
     }
