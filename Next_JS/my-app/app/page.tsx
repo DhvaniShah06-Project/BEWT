@@ -5,10 +5,9 @@ export default function Layout() {
     <>
     <nav className="navbar navbar-dark bg-dark px-3">
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        {/* Brand */}
+        
         <Link className="navbar-brand" href="/">Home</Link>
 
-        {/* Links always visible */}
         <ul className="navbar-nav d-flex flex-row">
           <li className="nav-item me-3">
             <Link className="nav-link" href="/Lab20">Lab 20</Link>
