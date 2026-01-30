@@ -3,7 +3,7 @@ const db=require("../Database/mysql")
 
 async function insert(formData){
      try{
-        const [data,fields]=await db.query(`INSERT INTO movie_rating (RatingID, MovieID, UserID,RatingStar,RatingComment) VALUES (NULL, '${formData.RatingID}', '${formData.MovieID}','${formData.UserID}','${formData.RatingStar}','${formData.RatingComment}')`);
+        const [data,fields]=await db.query(`INSERT INTO movie_rating (RatingID, MovieID, UserID,RatingStar,RatingComment) VALUES (NULL, '${formData.MovieID}','${formData.UserID}','${formData.RatingStar}','${formData.RatingComment}')`);
         return data
     }catch(err){
         console.log(err)
