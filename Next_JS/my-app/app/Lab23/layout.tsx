@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Lab23_Layout({children}:{children:React.ReactNode}) {
   return (
     <div>
-         <>
+        
       {/* Tailwind CDN */}
       <script src="https://cdn.tailwindcss.com"></script>
 
@@ -49,8 +49,9 @@ function Lab23_Layout({children}:{children:React.ReactNode}) {
       <div className="h-24">
         
       </div>
-    </>
       {children}
+
+      
     </div>
   )
 }

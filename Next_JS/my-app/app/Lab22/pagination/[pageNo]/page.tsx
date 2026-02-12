@@ -1,8 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
+import Link from "next/link";
 
-function Lab22_Page() {
-  const navItems = [
+export default async function Pagination({params,}: {params: { pageNo: string };}) {
+
+
+  const parsedPage =await parseInt(params.pageNo, 10);
+  const page = isNaN(parsedPage) ? 0 : parsedPage;
+
+  const recordsPerPage = 10;
+  const startIndex = page * recordsPerPage + 1;
+  const endIndex = (page + 1) * recordsPerPage;
+   const navItems = [
     { name: "Main", href: "/Lab22" },
     { name: "Admin", href: "/Lab22/dashboard" },
     { name: "Auth", href: "/Lab22/login" },
@@ -52,17 +59,14 @@ function Lab22_Page() {
       <div className="h-32" />
 
       <main className="max-w-7xl mx-auto p-8">
-        <div className="p-10 border border-white/5 rounded-3xl bg-white/[0.02]">
-          <h1 className="text-4xl font-black tracking-tight text-white mb-4">
-            Lab 22 <span className="text-cyan-500 italic">Dashboard</span>
-          </h1>
-          <p className="text-slate-400 max-w-xl leading-relaxed">
-            Welcome to the Lab 22 administrative portal. Select a module from the navigation above to manage your authentication flows, client data, or pagination settings.
-          </p>
-        </div>
+      <h1 className="text-2xl font-bold text-white">Pagination Info</h1>
+      <h1 className="text-xl font-semibold text-cyan-400">Page Number: {page}</h1>
+      <p className="text-xl font-semibold text-cyan-400">Start Index: {startIndex}</p>
+      <p className="text-xl font-semibold text-cyan-400">End Index: {endIndex}</p>
       </main>
     </div>
+     
 </>
-  )
+
+          )
 }
-export default Lab22_Page
