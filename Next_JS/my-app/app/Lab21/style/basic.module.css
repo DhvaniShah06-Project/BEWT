@@ -8,7 +8,7 @@
   position: relative;
   overflow-x: hidden;
   /* Font is inherited from layout, but we can enforce fallback */
-  font-family: 'Inter', sans-serif; 
+  font-family: 'Inter', sans-serif;
 }
 
 /* --- Animated Background Orbs --- */
@@ -18,7 +18,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Behind content */
+  z-index: 0;
+  /* Behind content */
   overflow: hidden;
   pointer-events: none;
 }
@@ -59,8 +60,13 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px) translateX(0px); }
-  100% { transform: translateY(20px) translateX(10px); }
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  100% {
+    transform: translateY(20px) translateX(10px);
+  }
 }
 
 /* --- Hero Section --- */
@@ -127,7 +133,7 @@
 .btnGlass:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Mobile Menu Overlay --- */
@@ -143,11 +149,13 @@
   align-items: center;
   gap: 2rem;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(100%); /* Hidden by default */
+  transform: translateX(100%);
+  /* Hidden by default */
 }
 
 .mobileMenuOpen {
-  transform: translateX(0); /* Slide in */
+  transform: translateX(0);
+  /* Slide in */
 }
 
 .mobileLink {

@@ -33,7 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
               {/* Links with Hover Glow */}
               <div className="hidden md:flex items-center gap-2">
-                {["20", "21", "22", "23","24"].map((num) => (
+                {["20", "21", "22", "23","25"].map((num) => (
                   <Link 
                     key={num}
                     href={`/Lab${num}`} 

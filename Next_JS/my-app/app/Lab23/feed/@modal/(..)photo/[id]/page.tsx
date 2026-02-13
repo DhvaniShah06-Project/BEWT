@@ -3,9 +3,8 @@
 import { use } from "react"; // 1. Import use
 import { useRouter } from "next/navigation";
 
-// 2. Update the type for params
 export default function PhotoModal({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params); // 3. Unwrap the params
+  const { id } = use(params); 
   const router = useRouter();
 
   return (
