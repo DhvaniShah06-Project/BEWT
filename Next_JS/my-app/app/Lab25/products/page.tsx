@@ -19,7 +19,7 @@ export default async function Page() {
         </thead>
         <tbody>
           {products.map((d: any) => (
-            <tr>
+            <tr key={d.id}>
               <td>{d.id}</td>
                 <td>
                   <img src={d.image} />

@@ -19,7 +19,7 @@ async function ID_Student({params}:{params:Promise<{id:String}>}) {
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr key={student.id}>
                 <td>{student.id}</td>
                 <td>
                   <img src={student.avatar}/>
