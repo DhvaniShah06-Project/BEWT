@@ -1,17 +1,44 @@
-var jwt=require('jsonwebtoken')
+var jwt = require('jsonwebtoken');
 
-function authMiddleware(req,res,next){
-      try{
-        if(req.url.toString().indexOf('login')>-1){
-            next();
+function authMiddleware(req, res, next) {
+    try {
+        // Allow login route without token
+        if (req.url.toString().indexOf('login') > -1) {
+            return next();
         }
-        else{
-            var decoded=jwt.verify(req.headers.authorization.split(" ")[1],'shhhhh')
-            next()
+
+        const authHeader = req.headers.authorization;
+
+        // Check if header exists
+        if (!authHeader) {
+            return res.status(401).send({
+                error: true,
+                message: "Authorization header missing"
+            });
         }
-        }catch(err){
-            res.status(401).send({error:true,message:"Unauthorized"})
+
+        const token = authHeader.split(" ")[1];
+
+        if (!token) {
+            return res.status(401).send({
+                error: true,
+                message: "Token missing"
+            });
         }
+
+        const decoded = jwt.verify(token, 'shhhhh');
+
+        // Optional: attach user info to request
+        req.user = decoded;
+
+        next();
+
+    } catch (err) {
+        res.status(401).send({
+            error: true,
+            message: "Unauthorized"
+        });
+    }
 }
 
-module.exports={authMiddleware}
+module.exports = { authMiddleware };

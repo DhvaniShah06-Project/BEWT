@@ -1,47 +1,37 @@
-import React from "react";
-import Link from "next/link";
 import styles from "./basic.module.css";
+import Link from "next/link";
 
-async function Lab25_Product() {
-  const apiUrl = "https://684af427165d05c5d35af75d.mockapi.io/Product";
-  const data=await((await fetch(apiUrl)).json());
-  // const data=await temp.json();
+export default async function Page() {
+  const products = await (await fetch("https://684af427165d05c5d35af75d.mockapi.io/Product", { next: { revalidate: 10 } })).json();
 
   return (
-    <>
-        <th style={{"border":"1px solid white"}}>
-                <tr>
-                <td style={{"border":"1px solid white"}}>Id</td>
-                <td style={{"border":"1px solid white"}}>Name</td>
-                <td style={{"border":"1px solid white"}}>Price</td>
-                <td style={{"border":"1px solid white"}}>Description</td>
-                </tr>
-              </th>
-      <div>
-            <table className={styles.table}>
-          
-              <tbody style={{"border":"1px solid white"}}>
-                {data.map((d: any) => (
-                  <tr key={d.id}>
-                    <td style={{"border":"1px solid white"}}>{d.id}</td>
-                    <td style={{"border":"1px solid white"}}>{d.name}</td>
-                    <td style={{"border":"1px solid white"}}>{d.price}</td>
-                    <td style={{"border":"1px solid white"}}>{d.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-           
-          
-      </div>
-    </>
+    <div className={styles.tableContainer}>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((d: any) => (
+            <tr>
+              <td>{d.id}</td>
+                <td>
+                  <img src={d.image} />
+                </td>
+              <td>{d.name}</td>
+              <td>{d.price}</td>
+              <td>{d.description}</td>
+              <td><Link href={`/Lab25/products/${d.id}`} className="btn btn-primary">View Details</Link></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
-
-export default Lab25_Product;
- // <li key={d.id}>
-            //   <li>{d.id}</li>
-            //   <li>{d.name}</li>
-            //   <li>{d.price}</li>
-            //   <li>{d.description}</li>
-            // </li>

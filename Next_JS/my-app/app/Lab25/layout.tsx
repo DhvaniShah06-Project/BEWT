@@ -120,17 +120,10 @@ function Lab25_Layout({children}:{children:React.ReactNode}) {
 
               {/* Links with Hover Glow */}
               <div className="hidden md:flex items-center gap-2">
-                {["20", "21", "22", "23","25"].map((num) => (
-                  <Link 
-                    key={num}
-                    href={`/Lab${num}`} 
-                    className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium"
-                  >
-                    Lab {num}
-                  </Link>
-              
-                )
-               )}
+            
+                 <Link href="/Lab25" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  Main Page
+                </Link>
                 <Link href="/Lab25/products" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
                   Products
                 </Link>
