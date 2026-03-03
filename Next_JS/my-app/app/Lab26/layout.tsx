@@ -1,10 +1,12 @@
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+function Lab26_Layout({children}:{children:React.ReactNode}) {
   return (
-    <>
-      {/* Tailwind CDN */}
-      <script src="https://cdn.tailwindcss.com"></script>
+    <div>
+       <div>
+      <div className="row">
+          <script src="https://cdn.tailwindcss.com"></script>
 
       <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-indigo-500/30 overflow-x-hidden">
         
@@ -33,15 +35,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
               {/* Links with Hover Glow */}
               <div className="hidden md:flex items-center gap-2">
-                {["20", "21", "22", "23","25","26"].map((num) => (
-                  <Link 
-                    key={num}
-                    href={`/Lab${num}`} 
-                    className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium"
-                  >
-                    Lab {num}
-                  </Link>
-                ))}
+            
+                 <Link href="/Lab26" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  Main Page
+                </Link>
+                <Link href="/Lab26/MySql" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  SQL
+                </Link>
+                 <Link href="/Lab26/MongoDb" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  MongoDB
+                </Link>
               </div>
 
             </div>
@@ -52,17 +55,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <main className="relative pt-32 pb-20 px-6 max-w-5xl mx-auto">
           
           {/* Section Header */}
-          <div className="mb-12 text-center">
-            <span className="px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-widest mb-4 inline-block">
-              Workspace v2.0
-            </span>
-            <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40">
-              Creative Lab Suite
-            </h1>
-            <p className="text-slate-400 text-lg max-w-xl mx-auto">
-              Experiment with next-generation interface designs and interactive components.
-            </p>
-          </div>
+          
 
           {/* Main Content Card with "Outer Glow" */}
           <div className="relative group">
@@ -87,6 +80,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </main>
 
       </div>
-    </>
-  );
+      </div>
+     
+    </div>
+    </div>
+  )
 }
+
+export default Lab26_Layout

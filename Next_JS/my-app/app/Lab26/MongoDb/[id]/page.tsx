@@ -1,0 +1,27 @@
+"use client"
+import { useParams } from 'next/navigation'
+import React, { useEffect, useState} from 'react'
+
+function Mongo_id({params}:{params:{id:number}}) {
+    const {id}=useParams();
+    const [data,setData]=useState<any>(null);
+
+    const fetchData=async()=>{
+      
+            const res=await fetch(`/api/user/${id}`);
+            const temp=await res.json();
+            setData(temp);
+    }
+    useEffect(()=>{
+        fetchData();
+    },[])
+  return (
+       <div>
+        {data.name}
+        {data.age}
+        {data.city} 
+    </div>
+  )
+}
+
+export default Mongo_id

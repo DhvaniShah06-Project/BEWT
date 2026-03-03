@@ -18,10 +18,7 @@ routeUser.get("/",async (req,res)=>{
     res.send(data)
 })
 
-// routeUser.get("/",async (req,res)=>{
-//     const data=await getAllUsers(req.body);
-//     res.send(data)
-// })
+
 
 //get by id
 routeUser.get("/:id",async (req,res)=>{
