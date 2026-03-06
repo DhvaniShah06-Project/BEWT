@@ -49,3 +49,5 @@ next.config.ts
 postcss.config.mjs
 tsconfig.json
 
+
+/lib/generated/prisma

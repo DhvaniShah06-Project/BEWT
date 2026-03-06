@@ -8,7 +8,7 @@ function Mongo_Db() {
   const router = useRouter();
 const fetchData = async () => {
   try {
-    const res = await fetch("/api/user");
+    const res = await fetch("/api/task");
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -32,9 +32,9 @@ const fetchData = async () => {
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">Name</th>
-            <th scope="col">City</th>
-            <th scope="col">Age</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Completed</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -51,12 +51,12 @@ const fetchData = async () => {
     data.map((d: any) => (
       <tr key={d._id}>
         <td>{d._id}</td>
-        <td>{d.name}</td>
-        <td>{d.city}</td>
-        <td>{d.age}</td>
+        <td>{d.title}</td>
+        <td>{d.description}</td>
+        <td>{d.isCompleted}</td>
         <td>
           <button
-            onClick={() => router.push(`/Lab26/MongoDb/${d._id}`)}
+            onClick={() => router.push(`/Lab26/MongoDb/task/${d._id}`)}
           >
             Details
           </button>

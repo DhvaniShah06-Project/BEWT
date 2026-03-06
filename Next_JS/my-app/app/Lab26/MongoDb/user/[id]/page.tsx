@@ -4,7 +4,7 @@ import React, { useEffect, useState} from 'react'
 
 function Mongo_id({params}:{params:{id:number}}) {
     const {id}=useParams();
-    const [data,setData]=useState<any>(null);
+    const [data,setData]=useState<any>("");
 
     const fetchData=async()=>{
       

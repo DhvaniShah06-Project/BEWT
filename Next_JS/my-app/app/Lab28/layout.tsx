@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-function Lab26_Layout({children}:{children:React.ReactNode}) {
+function Lab28_Layout({children}:{children:React.ReactNode}) {
   return (
     <div>
        <div>
@@ -36,14 +36,17 @@ function Lab26_Layout({children}:{children:React.ReactNode}) {
               {/* Links with Hover Glow */}
               <div className="hidden md:flex items-center gap-2">
             
-                 <Link href="/Lab26" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                 <Link href="/Lab28" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
                   Main Page
                 </Link>
-                <Link href="/Lab26/MongoDb/user" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
-                  User
+                <Link href="/Lab28/demoA" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                Demo A
                 </Link>
-                 <Link href="/Lab26/MongoDb/task" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
-                  Task
+                 <Link href="/Lab28/demoB" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  Demo B
+                </Link>
+                  <Link href="/Lab28/demoC" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  Demo C
                 </Link>
               </div>
 
@@ -87,4 +90,5 @@ function Lab26_Layout({children}:{children:React.ReactNode}) {
   )
 }
 
-export default Lab26_Layout
+export default Lab28_Layout
+/*Server action : server ene run kare */
