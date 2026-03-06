@@ -48,6 +48,9 @@ function Lab27_Layout({children}:{children:React.ReactNode}) {
                      <Link href="/Lab27/users" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
                   Users (Crud Prisma)
                 </Link>
+                  <Link href="/Lab27/tasks" className="px-5 py-2 rounded-full text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 text-sm font-medium">
+                  Task (Crud Prisma)
+                </Link>
               </div>
 
             </div>
