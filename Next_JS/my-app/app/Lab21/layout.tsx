@@ -18,7 +18,7 @@ function Lab21_Layout({children,}: {children: React.ReactNode;}){
 
         {/* FLOATING NEON NAV */}
         <nav className="fixed top-6 inset-x-0 z-50 px-6">
-          <div className="max-w-6xl mx-auto">
+         <div className="max-w-7xl mx-w-full">
             <div className="bg-slate-950/40 backdrop-blur-2xl border border-emerald-500/20 px-8 py-4 rounded-[2rem] shadow-[0_0_50px_rgba(0,0,0,0.8)] flex justify-between items-center">
               
               {/* Brand Logo with Glow */}

@@ -20,7 +20,7 @@ export default function Lab20_Layout({
 
         {/* FLOATING GLASS NAVIGATION */}
         <nav className="fixed top-6 inset-x-0 z-50 px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-w-full">
             <div className="bg-slate-950/60 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex justify-between items-center">
               {/* Logo with Glow */}
               <Link href="/" className="group flex items-center gap-2">

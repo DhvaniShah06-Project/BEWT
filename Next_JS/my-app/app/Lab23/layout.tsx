@@ -9,7 +9,7 @@ function Lab23_Layout({children}:{children:React.ReactNode}) {
       <script src="https://cdn.tailwindcss.com"></script>
 
       <nav className="fixed top-0 inset-x-0 z-[100] px-4 py-4">
-        <div className="max-w-6xl mx-auto bg-slate-950/60 backdrop-blur-xl border border-white/10 rounded-2xl px-6 h-16 flex items-center justify-between shadow-2xl">
+        <div className="max-w-7xl mx-auto bg-slate-950/60 backdrop-blur-xl border border-white/10 rounded-2xl px-6 h-16 flex items-center justify-between shadow-2xl">
           
           {/* BRAND / DEFAULT */}
           <Link href="/" className="group flex items-center gap-3">

@@ -37,7 +37,7 @@ async function UserPage() {
               />
               <Link
                 href={"/Lab27/users/edit/" + u.id}
-                className="bg-blue-600 hover:bg-blue-500 text-white py-2 px-4 rounded-md shadow-md transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="px-3 py-1 bg-blue-600 rounded-lg hover:bg-blue-500 text-white text-sm shadow-md transition-colors"
               >
                 Edit
               </Link>
